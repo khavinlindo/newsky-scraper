@@ -1,0 +1,22 @@
+
+.navbar {
+    background-color: midnightblue;
+    color: white;
+}
+
+.background-image {
+    background-image: url();
+}
+
+body {
+    font-family: 'Bree Serif', serif;    
+}
+
+.nav-item:hover {
+   
+}
+
+.nav-link {
+    color: white;
+}
+
