@@ -17,8 +17,8 @@ var scrape = function (callback) {
             //var head = $(element).find("a").children(".es182me1").text().trim();
             //var sum = $(element).find("a").find("e1n8kpyg0").text().trim();
 
-            var head = $(element).children(".esl82me1").text().trim();
-            var sum = $(element).children(".esl82me1").text().trim();
+            var head = $(element).text().trim();
+            var sum = $(element).text().trim();
 
             if(head && sum) {
                 var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
