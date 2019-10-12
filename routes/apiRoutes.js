@@ -43,6 +43,13 @@ module.exports = function (app) {
         });
     });
 
+    app.delete("/api/headlines/", function(req, res) {
+        var query = {};
+        headlinesController.delete(query, function(err, data) {
+           res.json(data);
+        });
+    })
+
 
     app.patch("/api/headlines", function(req, res) {
         headlinesController.update(req.body, function(err, data) {

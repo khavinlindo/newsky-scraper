@@ -9,7 +9,7 @@ var articleContainer = $(".article-container");
 //Adding event listeners to any dynamically generated "save article" and "scrape new article" buttons
 $(document).on("click", ".btn.save", handleArticleSave);
 $(document).on("click", ".scrape-new", handleArticleScrape)
-//$(document).on("click", ".clear", clearArticles);
+$(document).on("click", ".clear", clearArticles);
 
 initPage();
 
@@ -46,7 +46,7 @@ function createPanel(article) {
        "<div class='panel-heading'>",
        "<h3>",
        article.headline,
-       "<a class='btn btn-success save'>",
+       "<a class='btn btn-success save article-a'>",
        "Save Article",
        "</a>",
        "</h3>",
@@ -97,7 +97,7 @@ function handleArticleSave() {
       data: articleToSave
     })
     .then(function(data) {
-        // If successfule, mongoose will send back an object containing a key of "ok" with the value of 1 (which casts to 'true')
+        // If successful, mongoose will send back an object containing a key of "ok" with the value of 1 (which casts to 'true')
         if (data.ok) {
             initPage();
         }
@@ -114,9 +114,14 @@ function handleArticleScrape() {
       });
 }
 
-// function clearArticles() {
-//     articleContainer.empty();
-// }
+function clearArticles() {
+    $.ajax({
+        url: "/api/headlines/",
+        method: "DELETE"
+    }).then(function() {   
+            initPage();    
+    });
+}
 
 
 });

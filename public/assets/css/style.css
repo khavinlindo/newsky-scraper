@@ -54,7 +54,8 @@ body {
 }
 
 .panel-heading {
-    background-color: #3B69D4
+    background-color: #3B69D4;
+    
 }
 
 .panel {
@@ -65,5 +66,8 @@ body {
 
 .btn {
     margin-right: 10px;
+}
+.article-a {
+    float: right;
 }
 
