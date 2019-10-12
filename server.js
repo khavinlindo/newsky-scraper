@@ -24,7 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //require routes file
-require("./config/routes")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
