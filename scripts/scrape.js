@@ -7,15 +7,18 @@ var cheerio = require("cheerio");
 
 var scrape = function (callback) {
 
-    request("http://www.washingtonpost.com", function(err, res, body) {
+    request("http://www.nytimes.com", function(err, res, body) {
 
         var $ = cheerio.load(body);
 
         var articles = [];
 
-        $(".flex-stack").each(function(i, element) {
-            var head = $(element).children(".headline").text().trim();
-            var sum = $(element).children(".caption").text().trim();
+        $(".css-8atqhb").each(function(i, element) {
+            //var head = $(element).find("a").children(".es182me1").text().trim();
+            //var sum = $(element).find("a").find("e1n8kpyg0").text().trim();
+
+            var head = $(element).text().trim();
+            var sum = $(element).text().trim();
 
             if(head && sum) {
                 var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
@@ -28,6 +31,8 @@ var scrape = function (callback) {
                 articles.push(dataToAdd);
             }
         });
+        console.log("Testing");
+        console.log(articles);
         callback(articles);
     });
 }

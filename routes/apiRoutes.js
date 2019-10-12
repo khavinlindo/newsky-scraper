@@ -14,7 +14,7 @@ module.exports = function (app) {
     app.get("/api/fetch", function(req, res) {
         headlinesController.fetch(function(err, docs) {
             if (!docs || docs.insertedCount === 0) {
-                res.json({message: "No new articles oday. Check back tomorrow!"});
+                res.json({message: "No new articles Today. Check back tomorrow!"});
             }
             else {
                 res.json({message: "Added " + docs.insertedCount + " new articles!"});

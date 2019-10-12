@@ -4,9 +4,12 @@ $(document).ready(function() {
 
 var articleContainer = $(".article-container");
 
+//articleContainer.html("No articles currently Scraped");
+
 //Adding event listeners to any dynamically generated "save article" and "scrape new article" buttons
 $(document).on("click", ".btn.save", handleArticleSave);
 $(document).on("click", ".scrape-new", handleArticleScrape)
+//$(document).on("click", ".clear", clearArticles);
 
 initPage();
 
@@ -110,6 +113,10 @@ function handleArticleScrape() {
         bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>");
       });
 }
+
+// function clearArticles() {
+//     articleContainer.empty();
+// }
 
 
 });
