@@ -17,7 +17,7 @@ var scrape = function (callback) {
 
             var head = $(element).find("h2").text().trim();
             var sum = $(element).find("p").text().trim();
-            var url =$(element).find("a").attr("href");
+            var url = $(element).find("a").attr("href");
 
             if(head && sum) {
                 var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();

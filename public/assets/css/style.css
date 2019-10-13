@@ -4,6 +4,11 @@ html {
     min-height: 100%;
 }
 
+.sky, .sky:hover {
+ color: white;
+ font-size: 40px;
+}
+
 /* Move footer to bottom of page */
 .footer {
     position: absolute;
@@ -11,8 +16,12 @@ html {
     width: 100%;
     height: 60px;
     background-color: midnightblue;
+    color: white;
 }
 
+.mongo-footer {
+    margin-top: 30px;
+}
 
 /* .jumbotron, .overlay {
     background: linear-gradient(#333, black);
@@ -55,6 +64,8 @@ body {
 
 .panel-heading {
     background-color: #3B69D4;
+    padding-bottom: 2px;
+    padding-top: 5px;
     
 }
 
@@ -71,3 +82,11 @@ body {
     float: right;
 }
 
+.article-link, .article-link:hover {
+    color: white;
+}
+
+/* .article-link:hover {
+    color:white;
+}
+ */
